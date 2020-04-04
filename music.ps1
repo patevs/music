@@ -33,9 +33,9 @@
 
 .LINK
   Repository:
-    * https://github.com/patevs/utility-scripts
+    * https://github.com/patevs/music
   Script:
-    * https://github.com/patevs/utility-scripts/blob/master/scripts/music/music.ps1
+    * https://github.com/patevs/music/blob/master/music.ps1
 #>
 
 # ------------------------------------------------------------------------------------------- #
