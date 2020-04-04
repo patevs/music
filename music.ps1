@@ -12,7 +12,7 @@
 
 .DESCRIPTION
   1. Ensure python and pip are installed and check versions.
-  2. (Optional) Upgrade `Pip` installation.
+  2. (Optional) Upgrade pip installation.
   3. Create a virtual environment.
   4. Activate the virtual environment.
   5. Upgrade pip and setuptools
@@ -47,12 +47,12 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.1.0
+Set-Variable version -option Constant -value 0.0.1
 
 # Current Working Directory
-$_cwd = Get-Location
-Set-Variable cwd -option Constant -value $_cwd
-Write-Host "Current Location: $cwd"
+# $_cwd = Get-Location
+# Set-Variable cwd -option Constant -value $_cwd
+# Write-Host "Current Location: $cwd"
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -110,12 +110,14 @@ Function ExistsCommand ($cmdName) {
 }
 
 # Ensure the path where the environment will be created exists
+<#
 Function CheckPath ($path) {
   # Create environment path if it doesnt exist
   if ( -Not (Test-Path "$envPath") ) {
     New-Item -Path "$envPath" -ItemType Directory
   }
 }
+#>
 
 # ------------------------------------------------------------------------------------------- #
 
@@ -128,12 +130,14 @@ if ($args.Count -gt 0) {
     {
       "help" { PrintHelp }
       "version" { PrintVersion }
+      <#
       "--path" {
         if ( $args[$i + 1] ) {
           CheckPath($args[$i + 1])
         }
       }
-      # default { CheckPath($args[0]) }
+      default { CheckPath($args[0]) }
+      #>
     }
   }
 }
@@ -238,34 +242,29 @@ Write-Color "Activating", " Virtual Environment... " -C Green, White -StartSpace
 Invoke-Expression "$venvName/Scripts/activate"
 Write-Color " Done " -B Green -C Black
 
-$outdated = Invoke-Expression "pip list -o"
-$pipUp = $outdated -like "pip"
-
-if ( -Not $pipIp ) {
-  # Upgrade pip and setuptools redirecting output to null
-  Write-Color "Upgrading ", "pip", " and ", "setuptools", "...   " -C Green, Cyan, White, Cyan, White -StartSpace 4 -NoNewLine
-  Invoke-Expression "pip install --upgrade pip 2>&1 | Out-Null"
-  Invoke-Expression "pip install --upgrade setuptools 2>&1 | Out-Null"
-  Write-Color " Done " -B Green -C Black
-}
+# Upgrade pip and setuptools redirecting output to null
+Write-Color "Upgrading ", "pip", " and ", "setuptools", "...   " -C Green, Cyan, White, Cyan, White -StartSpace 4 -NoNewLine
+Invoke-Expression "pip install --upgrade pip 2>&1 | Out-Null"
+Invoke-Expression "pip install --upgrade setuptools 2>&1 | Out-Null"
+Write-Color " Done " -B Green -C Black
 
 # Begin Install
 Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C White, Green
 
 # Install spotify-downloader redirecting output to null
-Write-Color "Installing", " Spotify Downloader...       " -C Green, White -StartSpaces 4 -NoNewLine
+Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
 
 # Install YouTube Music Downloader redirecting output to null
-Write-Color "Installing", " YouTube Music Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
-Invoke-Expression "pip install ytmdl 2>&1 | Out-Null"
-Write-Color " Done " -B Green -C Black
+# Write-Color "Installing", " YouTube Music Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
+# Invoke-Expression "pip install ytmdl 2>&1 | Out-Null"
+# Write-Color " Done " -B Green -C Black
 
 # Install mps-youtube redirecting output to null
-Write-Color "Installing", " MPS-Youtube... " -C Green, White -StartSpaces 4 -NoNewLine
-Invoke-Expression "pip install mps-youtube 2>&1 | Out-Null"
-Write-Color "Done" -B Green -C Black
+# Write-Color "Installing", " MPS-Youtube... " -C Green, White -StartSpaces 4 -NoNewLine
+# Invoke-Expression "pip install mps-youtube 2>&1 | Out-Null"
+# Write-Color "Done" -B Green -C Black
 
 # TODO: Install beets dependencies
 # Install Beets redirecting output to null
