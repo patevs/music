@@ -15,5 +15,16 @@
     "commitizen": "^4.0.4",
     "cz-emoji": "^1.2.1",
     "np": "^6.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji"
+    },
+    "cz-emoji": {
+      "skipQuestions": [
+        "body",
+        "issues"
+      ]
+    }
   }
 }
