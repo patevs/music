@@ -147,6 +147,7 @@ PrintWelcome
 
 # Verify if PSWriteColor module is installed
 if (-Not (ExistsModule PSWriteColor)) {
+  # TODO: This step requires elevated permissions
   Write-Host "`n PSWriteColor module is not installed. " -NoNewline
   Write-Host "Installing Now... " -ForegroundColor Green -NoNewline
   Install-Module -Name PSWriteColor
