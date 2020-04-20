@@ -17,6 +17,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/core": "^8.3.5",
     "commitizen": "^4.0.4",
+    "commitlint-config-gitmoji": "^1.0.1",
     "cz-emoji": "^1.2.1",
     "np": "^6.2.1"
   },
