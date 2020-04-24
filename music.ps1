@@ -199,6 +199,7 @@ if (ExistsCommand ffmpeg) {
   exit
 }
 
+<#
 # mpv
 if (ExistsCommand mpv) {
   $mpvVersion = Invoke-Expression "mpv --version"
@@ -222,6 +223,7 @@ if (ExistsCommand youtube-dl) {
   Write-Color " Exiting " -B Red
   exit
 }
+#>
 
 # Begin Setup
 Write-Color " `n All Requirements Satisfied! ", "Beginning Environment Setup... `n" -C White, Green
