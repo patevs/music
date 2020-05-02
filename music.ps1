@@ -1,5 +1,4 @@
-<# scripts/music/music.ps1
-
+<#
 .SYNOPSIS
   PowerShell script for setting up a music environment.
 
@@ -27,9 +26,9 @@
   .\music.ps1
 
 .NOTES
-  File Name: music.ps1
-  Author: PatEvs (https://github.com/patevs)
-  Last Edit: 02/04/2020 - April 1st 2020
+  Version:        1.0
+  Author:         PatEvs (https://github.com/patevs)
+  Last Edit:      02/05/2020 - May 2nd 2020
 
 .LINK
   Repository:
@@ -38,11 +37,9 @@
     * https://github.com/patevs/music/blob/master/music.ps1
 #>
 
-# ------------------------------------------------------------------------------------------- #
+# ------------------------------------ [Initialisations] ------------------------------------ #
 
-# * --------- #
-# * CONSTANTS #
-# * --------- #
+# -------------------------------------- [Declarations] ------------------------------------- #
 
 # https://stackoverflow.com/a/2608564
 
@@ -64,11 +61,7 @@ Set-Variable background -option Constant -value (get-host).ui.rawui.BackgroundCo
 # Name of the virtual environment to be created
 Set-Variable venvName -option Constant -value "venv"
 
-# ------------------------------------------------------------------------------------------- #
-
-# * ---------------- #
-# * HELPER FUNCTIONS #
-# * ---------------- #
+# --------------------------------------- [Functions] --------------------------------------- #
 
 # Print a Welcome Message
 Function PrintWelcome {
@@ -119,7 +112,7 @@ Function CheckPath ($path) {
 }
 #>
 
-# ------------------------------------------------------------------------------------------- #
+# --------------------------------------- [Execution] --------------------------------------- #
 
 # Validate command line arguments
 if ($args.Count -gt 0) {
@@ -160,6 +153,7 @@ Import-Module PSWriteColor
 Write-Color "Verifying ", "Installation Requirements... `n" -C Green, White -StartSpace 2
 
 # Python
+# TODO: Ensure we are using python3
 if (ExistsCommand python) {
   $pythonVersion = Invoke-Expression "python --version"
   $pythonVersion = $pythonVersion -replace "Python "
@@ -278,6 +272,4 @@ Write-Color " Done " -B Green -C Black
 Write-Color ""
 Write-Color " DONE `n" -B Green -C Black
 
-# ------------------------------------------------------------------------------------------- #
-
-# EOF #
+# ------------------------------------------ [END] ------------------------------------------ #
