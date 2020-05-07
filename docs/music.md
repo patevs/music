@@ -13,5 +13,6 @@
 
 * [`MusicRepair`](https://github.com/kalbhor/MusicRepair) Fixes music metadata and adds album art.
 * [`playx`](https://github.com/NISH1001/playx) Search and play any song from terminal.
+* [`spotitube`](https://github.com/streambinder/spotitube) Synchronize your Spotify collections downloading from external providers.
 
 ---
