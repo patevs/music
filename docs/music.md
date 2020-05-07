@@ -14,5 +14,7 @@
 * [`MusicRepair`](https://github.com/kalbhor/MusicRepair) Fixes music metadata and adds album art.
 * [`playx`](https://github.com/NISH1001/playx) Search and play any song from terminal.
 * [`spotitube`](https://github.com/streambinder/spotitube) Synchronize your Spotify collections downloading from external providers.
+* [`Spicetify`](https://github.com/khanhas/Spicetify) Tool to customize Spotify client UI and expand functionalities.
+* [`spicetify-cli`](https://github.com/khanhas/spicetify-cli) Command line tool to customize Spotify client.
 
 ---
