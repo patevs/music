@@ -9,4 +9,8 @@
 * [`mps-youtube`](https://github.com/mps-youtube/mps-youtube) Terminal based YouTube player and downloader. *Note* - Requires `ffmpeg`, `mpv`, and `youtube-dl` to be installed.
 * [`beets`](https://github.com/beetbox/beets) Music library manager and MusicBrainz tagger.
 
+[](.)
+
+* [`playx`](https://github.com/NISH1001/playx) Search and play any song from terminal.
+
 ---
