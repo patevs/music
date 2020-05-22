@@ -40,18 +40,12 @@
 # Current version of the script
 Set-Variable version -option Constant -value 0.0.1
 
-# Current Working Directory
-# $_cwd = Get-Location
-# Set-Variable cwd -option Constant -value $_cwd
-# Write-Host "Current Location: $cwd"
-
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
 # $foreground = (get-host).ui.rawui.ForegroundColor
 # $background = (get-host).ui.rawui.BackgroundColor
 Set-Variable background -option Constant -value (get-host).ui.rawui.BackgroundColor
 
-# TODO: Add this as an optional argument parameter
 # Name of the virtual environment to be created
 Set-Variable venvName -option Constant -value "venv"
 
@@ -71,7 +65,7 @@ Function PrintHelp {
   Write-Host " `t .\music.ps1"
   Write-Host " `t .\music.ps1 help"
   Write-Host " `t .\music.ps1 version"
-  Write-Host " `t .\music.ps1 --path path\to\create\virtual\environment]"
+  # Write-Host " `t .\music.ps1 --path path\to\create\virtual\environment]"
   Write-Host ""
   exit
 }
@@ -96,16 +90,6 @@ Function ExistsCommand ($cmdName) {
   return [bool](Get-Command -Name $cmdName -ErrorAction SilentlyContinue)
 }
 
-# Ensure the path where the environment will be created exists
-<#
-Function CheckPath ($path) {
-  # Create environment path if it doesnt exist
-  if ( -Not (Test-Path "$envPath") ) {
-    New-Item -Path "$envPath" -ItemType Directory
-  }
-}
-#>
-
 # --------------------------------------- [Execution] --------------------------------------- #
 
 # Validate command line arguments
@@ -117,14 +101,6 @@ if ($args.Count -gt 0) {
     {
       "help" { PrintHelp }
       "version" { PrintVersion }
-      <#
-      "--path" {
-        if ( $args[$i + 1] ) {
-          CheckPath($args[$i + 1])
-        }
-      }
-      default { CheckPath($args[0]) }
-      #>
     }
   }
 }
