@@ -4,18 +4,12 @@
 
   ! Requires python and pip to be installed.
 
-  TODO: Accept argument parameter for location to create the environment.
-  TODO: Accept argument parameter for the name of the virtual environment that is created.
-  TODO: Install beets dependencies
-  TODO: Split installs into seperate components
-
 .DESCRIPTION
   1. Ensure python and pip are installed and check versions.
-  2. (Optional) Upgrade pip installation.
-  3. Create a virtual environment.
-  4. Activate the virtual environment.
-  5. Upgrade pip and setuptools
-  6. Install pip packages ensuring required dependencies are met for each.
+  2. Create a virtual environment.
+  3. Activate the virtual environment.
+  4. Upgrade pip and setuptools
+  5. Install pip packages ensuring required dependencies are met for each.
 
   Tested Python Versions:
     * 3.8.2
@@ -26,9 +20,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        1.0
+  Version:        0.0.1
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      02/05/2020 - May 2nd 2020
+  Last Edit:      22/05/2020 - May 22nd 2020
 
 .LINK
   Repository:
@@ -46,18 +40,12 @@
 # Current version of the script
 Set-Variable version -option Constant -value 0.0.1
 
-# Current Working Directory
-# $_cwd = Get-Location
-# Set-Variable cwd -option Constant -value $_cwd
-# Write-Host "Current Location: $cwd"
-
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
 # $foreground = (get-host).ui.rawui.ForegroundColor
 # $background = (get-host).ui.rawui.BackgroundColor
 Set-Variable background -option Constant -value (get-host).ui.rawui.BackgroundColor
 
-# TODO: Add this as an optional argument parameter
 # Name of the virtual environment to be created
 Set-Variable venvName -option Constant -value "venv"
 
@@ -77,7 +65,7 @@ Function PrintHelp {
   Write-Host " `t .\music.ps1"
   Write-Host " `t .\music.ps1 help"
   Write-Host " `t .\music.ps1 version"
-  Write-Host " `t .\music.ps1 --path path\to\create\virtual\environment]"
+  # Write-Host " `t .\music.ps1 --path path\to\create\virtual\environment]"
   Write-Host ""
   exit
 }
@@ -102,16 +90,6 @@ Function ExistsCommand ($cmdName) {
   return [bool](Get-Command -Name $cmdName -ErrorAction SilentlyContinue)
 }
 
-# Ensure the path where the environment will be created exists
-<#
-Function CheckPath ($path) {
-  # Create environment path if it doesnt exist
-  if ( -Not (Test-Path "$envPath") ) {
-    New-Item -Path "$envPath" -ItemType Directory
-  }
-}
-#>
-
 # --------------------------------------- [Execution] --------------------------------------- #
 
 # Validate command line arguments
@@ -123,14 +101,6 @@ if ($args.Count -gt 0) {
     {
       "help" { PrintHelp }
       "version" { PrintVersion }
-      <#
-      "--path" {
-        if ( $args[$i + 1] ) {
-          CheckPath($args[$i + 1])
-        }
-      }
-      default { CheckPath($args[0]) }
-      #>
     }
   }
 }

@@ -34,7 +34,7 @@
   Repository:
     * https://github.com/patevs/music
   Script:
-    * https://github.com/patevs/music/blob/master/music.ps1
+    * https://github.com/patevs/music/blob/master/scripts/old.ps1
 #>
 
 # ------------------------------------ [Initialisations] ------------------------------------ #
