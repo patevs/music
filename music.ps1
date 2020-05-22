@@ -4,18 +4,12 @@
 
   ! Requires python and pip to be installed.
 
-  TODO: Accept argument parameter for location to create the environment.
-  TODO: Accept argument parameter for the name of the virtual environment that is created.
-  TODO: Install beets dependencies
-  TODO: Split installs into seperate components
-
 .DESCRIPTION
   1. Ensure python and pip are installed and check versions.
-  2. (Optional) Upgrade pip installation.
-  3. Create a virtual environment.
-  4. Activate the virtual environment.
-  5. Upgrade pip and setuptools
-  6. Install pip packages ensuring required dependencies are met for each.
+  2. Create a virtual environment.
+  3. Activate the virtual environment.
+  4. Upgrade pip and setuptools
+  5. Install pip packages ensuring required dependencies are met for each.
 
   Tested Python Versions:
     * 3.8.2
@@ -26,9 +20,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        1.0
+  Version:        0.0.1
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      02/05/2020 - May 2nd 2020
+  Last Edit:      22/05/2020 - May 22nd 2020
 
 .LINK
   Repository:
