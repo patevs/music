@@ -22,7 +22,7 @@
 .NOTES
   Version:        0.0.1
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      22/05/2020 - May 22nd 2020
+  Last Edit:      27/05/2020 - May 27th 2020
 
 .LINK
   Repository:
@@ -65,7 +65,6 @@ Function PrintHelp {
   Write-Host " `t .\music.ps1"
   Write-Host " `t .\music.ps1 help"
   Write-Host " `t .\music.ps1 version"
-  # Write-Host " `t .\music.ps1 --path path\to\create\virtual\environment]"
   Write-Host ""
   exit
 }
@@ -163,32 +162,6 @@ if (ExistsCommand ffmpeg) {
   exit
 }
 
-<#
-# mpv
-if (ExistsCommand mpv) {
-  $mpvVersion = Invoke-Expression "mpv --version"
-  $mpvVersion = $mpvVersion -replace "mpv "
-  $mpvVersion = $mpvVersion.Split(" ")[0]
-  Write-Color "|", " mpv         ", "|", " $mpvVersion      ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
-} else {
-  Write-Color "mpv", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
-  Write-Color " Exiting " -B Red
-  exit
-}
-
-# youtube-dl
-if (ExistsCommand youtube-dl) {
-  $ytdlVersion = Invoke-Expression "youtube-dl --version"
-  Write-Color "|", " youtube-dl  ", "|", " $ytdlVersion  ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
-} else {
-  Write-Color "youtube-dl", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
-  Write-Color " Exiting " -B Red
-  exit
-}
-#>
-
 # Begin Setup
 Write-Color " `n All Requirements Satisfied! ", "Beginning Environment Setup... `n" -C White, Green
 
@@ -220,24 +193,9 @@ Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C Whi
 
 # Install spotify-downloader redirecting output to null
 Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
-Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
+# Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
+Invoke-Expression "pip install spotdl<2 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
-
-# Install YouTube Music Downloader redirecting output to null
-# Write-Color "Installing", " YouTube Music Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
-# Invoke-Expression "pip install ytmdl 2>&1 | Out-Null"
-# Write-Color " Done " -B Green -C Black
-
-# Install mps-youtube redirecting output to null
-# Write-Color "Installing", " MPS-Youtube... " -C Green, White -StartSpaces 4 -NoNewLine
-# Invoke-Expression "pip install mps-youtube 2>&1 | Out-Null"
-# Write-Color "Done" -B Green -C Black
-
-# TODO: Install beets dependencies
-# Install Beets redirecting output to null
-# Write-Color "Installing", " Beets... " -C Green, White -StartSpaces 4 -NoNewLine
-# Invoke-Expression "pip install beets 2>&1 | Out-Null"
-# Write-Color "Done" -B Green -C Black
 
 Write-Color ""
 Write-Color " DONE `n" -B Green -C Black
