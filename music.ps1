@@ -219,7 +219,7 @@ Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C Whi
 
 # Install spotify-downloader redirecting output to null
 Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
-Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
+Invoke-Expression "pip install spotdl==1.2.6 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
 
 # Install YouTube Music Downloader redirecting output to null
