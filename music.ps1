@@ -202,4 +202,6 @@ Write-Color " Done " -B Green -C Black
 Write-Color ""
 Write-Color " DONE `n" -B Green -C Black
 
+Write-Color "`n spotdl -p `n spotdl --list `n spotdl -s `n"
+
 # ------------------------------------------ [END] ------------------------------------------ #
