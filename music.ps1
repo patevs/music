@@ -56,8 +56,8 @@ Set-Variable venvName -option Constant -value "venv"
 # Print a Welcome Message
 Function PrintWelcome {
   Write-Host ""
-  Write-Host " Music Environment Setup Script " -BackgroundColor Magenta -ForegroundColor Black
-  Write-Host ""
+  Write-Host " Music Environment Setup Script " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
+  Write-Host "`n"
 }
 
 # Print a Help Message
@@ -199,9 +199,15 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl<2 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
 
-Write-Color ""
-Write-Color " DONE `n" -B Green -C Black
+Write-Host ""
+Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
+Write-Host "`n"
+Write-Color "Save Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
+Write-Color "Download Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
+Write-Color "Download Song:      spotdl -s <song-url>" -StartSpaces 2
 
-Write-Color "`n spotdl -p `n spotdl --list `n spotdl -s `n"
+Write-Color ""
+Write-Color " DONE " -B Green -C Black -NoNewLine
+Write-Color "`n"
 
 # ------------------------------------------ [END] ------------------------------------------ #
