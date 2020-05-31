@@ -62,8 +62,7 @@ Function PrintWelcome {
 
 # Print a Help Message
 Function PrintHelp {
-  PrintWelcome
-  Write-Host " Usage: "
+  Write-Host " Usage Instructions: "
   Write-Host " `t .\music.ps1"
   Write-Host " `t .\music.ps1 help"
   Write-Host " `t .\music.ps1 version"
@@ -73,7 +72,6 @@ Function PrintHelp {
 
 # Print the Current Version of the Script
 Function PrintVersion {
-  PrintWelcome
   Write-Host " Version: " -NoNewLine
   Write-Host "$version" -ForegroundColor Green
   Write-Host ""
@@ -93,6 +91,9 @@ Function ExistsCommand ($cmdName) {
 
 # --------------------------------------- [Execution] --------------------------------------- #
 
+# Print a welcome message
+PrintWelcome
+
 # Validate command line arguments
 if ($args.Count -gt 0) {
   # Loop over all arguments
@@ -105,9 +106,6 @@ if ($args.Count -gt 0) {
     }
   }
 }
-
-# Print a welcome message
-PrintWelcome
 
 # Verify if PSWriteColor module is installed
 if (-Not (ExistsModule PSWriteColor)) {
