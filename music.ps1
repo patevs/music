@@ -22,9 +22,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.0.1
+  Version:        0.1.0
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      27/05/2020 - May 27th 2020
+  Last Edit:      31/05/2020 - May 31st 2020
 
 .LINK
   Repository:
@@ -40,7 +40,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.0.1
+Set-Variable version -option Constant -value 0.1.0
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -56,14 +56,13 @@ Set-Variable venvName -option Constant -value "venv"
 # Print a Welcome Message
 Function PrintWelcome {
   Write-Host ""
-  Write-Host " Music Environment Setup Script " -BackgroundColor Magenta -ForegroundColor Black
-  Write-Host ""
+  Write-Host " Music Environment Setup Script " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
+  Write-Host "`n"
 }
 
 # Print a Help Message
 Function PrintHelp {
-  PrintWelcome
-  Write-Host " Usage: "
+  Write-Host " Usage Instructions: "
   Write-Host " `t .\music.ps1"
   Write-Host " `t .\music.ps1 help"
   Write-Host " `t .\music.ps1 version"
@@ -73,7 +72,6 @@ Function PrintHelp {
 
 # Print the Current Version of the Script
 Function PrintVersion {
-  PrintWelcome
   Write-Host " Version: " -NoNewLine
   Write-Host "$version" -ForegroundColor Green
   Write-Host ""
@@ -93,6 +91,9 @@ Function ExistsCommand ($cmdName) {
 
 # --------------------------------------- [Execution] --------------------------------------- #
 
+# Print a welcome message
+PrintWelcome
+
 # Validate command line arguments
 if ($args.Count -gt 0) {
   # Loop over all arguments
@@ -105,9 +106,6 @@ if ($args.Count -gt 0) {
     }
   }
 }
-
-# Print a welcome message
-PrintWelcome
 
 # Verify if PSWriteColor module is installed
 if (-Not (ExistsModule PSWriteColor)) {
@@ -199,7 +197,15 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl<2 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
 
+Write-Host ""
+Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
+Write-Host "`n"
+Write-Color "Save Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
+Write-Color "Download Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
+Write-Color "Download Song:      spotdl -s <song-url>" -StartSpaces 2
+
 Write-Color ""
-Write-Color " DONE `n" -B Green -C Black
+Write-Color " DONE " -B Green -C Black -NoNewLine
+Write-Color "`n"
 
 # ------------------------------------------ [END] ------------------------------------------ #
