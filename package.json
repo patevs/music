@@ -1,5 +1,5 @@
 {
-  "name": "music-utilities",
+  "name": "music",
   "version": "0.3.0",
   "description": "Scripts to setup a disposable environment for downloading music from Spotify and YouTube",
   "author": "PatEvs",
