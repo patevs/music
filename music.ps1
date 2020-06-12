@@ -13,18 +13,15 @@
   4. Upgrade pip and setuptools
   5. Install pip packages ensuring required dependencies are met for each.
 
-  Tested Python Versions:
-    * 3.8.2
-
   **NOTE** : This script will install the [`PSWriteColor`](https://github.com/EvotecIT/PSWriteColor) module.
 
 .EXAMPLE
   .\music.ps1
 
 .NOTES
-  Version:        0.1.0
+  Version:        0.4.1
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      31/05/2020 - May 31st 2020
+  Last Edit:      12/06/2020 - June 12th 2020
 
 .LINK
   Repository:
