@@ -205,10 +205,8 @@ Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Blac
 Write-Host "`n"
 Write-Color "Save Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
 Write-Color "Download Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
-Write-Color "Download Song:      spotdl -s <song-url>" -StartSpaces 2
-
-Write-Host "" # New Line
-Write-Color "Download Song:      ytmdl [SONG_NAME]" -StartSpaces 2
+Write-Color "Download Spotify Song:      spotdl -s <song-url>" -StartSpaces 2
+Write-Color "Download YouTube Song:      ytmdl [SONG_NAME]" -StartSpaces 2
 
 Write-Color ""
 Write-Color " DONE " -B Green -C Black -NoNewLine
