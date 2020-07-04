@@ -4,8 +4,6 @@
 
   ! Requires python and pip to be installed.
 
-  TODO: Add usage instructions
-
 .DESCRIPTION
   1. Ensure python and pip are installed and check versions.
   2. Create a virtual environment.
@@ -19,9 +17,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.4.1
+  Version:        0.6.0
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      12/06/2020 - June 12th 2020
+  Last Edit:      04/07/2020 - July 4th 2020
 
 .LINK
   Repository:
@@ -37,7 +35,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.1.0
+Set-Variable version -option Constant -value 0.6.0
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -151,7 +149,7 @@ if (ExistsCommand ffmpeg) {
   $ffmpegVersion = Invoke-Expression "ffmpeg -version"
   $ffmpegVersion = $ffmpegVersion -replace "ffmpeg version "
   $ffmpegVersion = $ffmpegVersion.Split(" ")[0]
-  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion         ", "|" -C White, Cyan, White, Green, White -StartSpace 4
   Write-Color "+-------------+-------------+" -StartSpace 4
 } else {
   Write-Color "ffmpeg", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
@@ -194,12 +192,19 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl<2 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
 
+# Install YouTube Music Downloader redirecting output to null
+# Write-Color "Installing", " YouTube Music Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
+Write-Color "Installing", " YouTube Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
+Invoke-Expression "pip install ytmdl 2>&1 | Out-Null"
+Write-Color " Done " -B Green -C Black
+
 Write-Host ""
 Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
 Write-Host "`n"
-Write-Color "Save Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
-Write-Color "Download Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
-Write-Color "Download Song:      spotdl -s <song-url>" -StartSpaces 2
+Write-Color "Save Spotify Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
+Write-Color "Download Spotify Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
+Write-Color "Download Spotify Song:      spotdl -s <song-url>" -StartSpaces 2
+Write-Color "Download YouTube Song:      ytmdl [SONG_NAME]" -StartSpaces 2
 
 Write-Color ""
 Write-Color " DONE " -B Green -C Black -NoNewLine
