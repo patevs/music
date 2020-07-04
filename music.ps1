@@ -206,7 +206,7 @@ Write-Color "Save Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
 Write-Color "Download Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
 Write-Color "Download Song:      spotdl -s <song-url>" -StartSpaces 2
 
-Write-Host "`n"
+Write-Host "" # New Line
 Write-Color "Download Song:      ytmdl [SONG_NAME]" -StartSpaces 2
 
 Write-Color ""
