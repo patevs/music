@@ -17,7 +17,7 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.5.0
+  Version:        0.6.0
   Author:         PatEvs (https://github.com/patevs)
   Last Edit:      04/07/2020 - July 4th 2020
 
@@ -35,7 +35,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.5.0
+Set-Variable version -option Constant -value 0.6.0
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
