@@ -4,8 +4,6 @@
 
   ! Requires python and pip to be installed.
 
-  TODO: Add usage instructions
-
 .DESCRIPTION
   1. Ensure python and pip are installed and check versions.
   2. Create a virtual environment.
