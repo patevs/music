@@ -194,12 +194,20 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl<2 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
 
+# Install YouTube Music Downloader redirecting output to null
+Write-Color "Installing", " YouTube Music Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
+Invoke-Expression "pip install ytmdl 2>&1 | Out-Null"
+Write-Color " Done " -B Green -C Black
+
 Write-Host ""
 Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
 Write-Host "`n"
 Write-Color "Save Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
 Write-Color "Download Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
 Write-Color "Download Song:      spotdl -s <song-url>" -StartSpaces 2
+
+Write-Host "`n"
+Write-Color "Download Song:      ytmdl [SONG_NAME]" -StartSpaces 2
 
 Write-Color ""
 Write-Color " DONE " -B Green -C Black -NoNewLine
