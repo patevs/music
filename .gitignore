@@ -15,4 +15,7 @@ node_modules/
 env/
 venv/
 
+# Downloads
+dl/
+
 # EOF #
