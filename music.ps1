@@ -3,7 +3,7 @@
   PowerShell script for setting up a disposable environment
   for downloading music from Spotify including metadata.
 
-  ! Requires python and pip to be installed.
+  ! Requires python 3.6+ and pip to be installed.
 
 .DESCRIPTION
   1. Ensure python and pip are installed and check versions.
@@ -118,7 +118,7 @@ Import-Module PSWriteColor
 Write-Color "Verifying ", "Installation Requirements... `n" -C Green, White -StartSpace 2
 
 # Python
-# TODO: Ensure we are using python3
+# TODO: Ensure we are using python 3.6+
 if (ExistsCommand python) {
   $pythonVersion = Invoke-Expression "python --version"
   $pythonVersion = $pythonVersion -replace "Python "
