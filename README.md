@@ -1,21 +1,24 @@
 # Music Scripts
 
-> Scripts to setup a disposable environment for downloading music from Spotify and YouTube
+> Setup a disposable environment for downloading music from Spotify including metadata.
 
 ---
 
 ## Links and Resources
 
-* [`spotify-downloader`](https://github.com/ritiek/spotify-downloader) Download Spotify playlists from YouTube with albumart and metadata. *Note* - Requires `ffmpeg` to be installed.
+* [`spotify-downloader`](https://github.com/ritiek/spotify-downloader) Download Spotify playlists from YouTube with albumart and metadata.
+  * *Note* - Requires `ffmpeg` to be installed.
 
 [](.)
 
-* [`spotify-dl`](https://github.com/SwapnilSoni1999/spotify-dl) Spotify Downloader and alternative of Spotdl(python) tool made in NodeJS based on youtube-dl.
+* [`spotify-dl`](https://github.com/SwapnilSoni1999/spotify-dl) Spotify Downloader tool made in NodeJS based on youtube-dl.
 
 [](.)
 
-* [`ytmdl`](https://github.com/deepjyoti30/ytmdl) Get songs from youtube in mp3 format with artist name, album name etc from itunes, gaana etc. *Note* - Requires `ffmpeg` to be installed & must be run using `bash`.
-* [`mps-youtube`](https://github.com/mps-youtube/mps-youtube) Terminal based YouTube player and downloader. *Note* - Requires `ffmpeg`, `mpv`, and `youtube-dl` to be installed.
+* [`ytmdl`](https://github.com/deepjyoti30/ytmdl) Get songs from youtube in mp3 format with artist name, album name etc from itunes, gaana etc.
+  * *Note* - Requires `ffmpeg` to be installed & must be run using `bash`.
+* [`mps-youtube`](https://github.com/mps-youtube/mps-youtube) Terminal based YouTube player and downloader.
+  * *Note* - Requires `ffmpeg`, `mpv`, and `youtube-dl` to be installed.
 * [`beets`](https://github.com/beetbox/beets) Music library manager and MusicBrainz tagger.
 
 [](.)
