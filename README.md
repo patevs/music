@@ -4,34 +4,34 @@
 
 ---
 
-## Links and Resources
+## Usage
 
-* [`spotify-downloader`](https://github.com/ritiek/spotify-downloader) Download Spotify playlists from YouTube with albumart and metadata.
-  * *Note* - Requires `ffmpeg` to be installed.
+Run the setup script:
 
-[](.)
+```powershell
+.\music.ps1
+```
 
-* [`spotify-dl`](https://github.com/SwapnilSoni1999/spotify-dl) Spotify Downloader tool made in NodeJS based on youtube-dl.
+For the most basic usage, downloading tracks is as easy as
 
-[](.)
+```powershell
+spotdl --song https://open.spotify.com/track/2DGa7iaidT5s0qnINlwMjJ
+spotdl --song "ncs - spectre"
+```
 
-* [`mps-youtube`](https://github.com/mps-youtube/mps-youtube) Terminal based YouTube player and downloader.
-  * *Note* - Requires `ffmpeg`, `mpv`, and `youtube-dl` to be installed.
-* [`beets`](https://github.com/beetbox/beets) Music library manager and MusicBrainz tagger.
+---
 
-[](.)
+## Disclaimer
 
-* [`ytmdl`](https://github.com/deepjyoti30/ytmdl) Get songs from youtube in mp3 format with artist name, album name etc from itunes, gaana etc.
-  * *Note* - Requires `ffmpeg` to be installed & must be run using `bash`.
-* [`MusicRepair`](https://github.com/kalbhor/MusicRepair) Fixes music metadata and adds album art.
-* [`playx`](https://github.com/NISH1001/playx) Search and play any song from terminal.
-* [`spotify-tui`](https://github.com/Rigellute/spotify-tui) A Spotify client for the terminal.
-* [`spotitube`](https://github.com/streambinder/spotitube) Synchronize your Spotify collections downloading from external providers.
+Downloading copyright songs may be illegal in your country.
+This tool is for educational purposes only and was created only to show
+how Spotify's API can be exploited to download music from YouTube.
+Please support the artists by buying their music.
 
-[](.)
+---
 
-* [`Spicetify`](https://github.com/khanhas/Spicetify) Tool to customize Spotify client UI and expand functionalities.
-* [`spicetify-cli`](https://github.com/khanhas/spicetify-cli) Command line tool to customize Spotify client.
-* [`spicetify-themes`](https://github.com/morpheusthewhite/spicetify-themes) A community-driven collection of themes for Spicetify.
+## License
+
+[![License](https://img.shields.io/github/license/patevs/music.svg)](https://github.com/patevs/music/blob/master/LICENSE)
 
 ---
