@@ -1,6 +1,7 @@
 <#
 .SYNOPSIS
-  PowerShell script for setting up a music environment.
+  PowerShell script for setting up a disposable environment
+  for downloading music from Spotify including metadata.
 
   ! Requires python and pip to be installed.
 
@@ -17,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.6.0
+  Version:        0.7.0
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      04/07/2020 - July 4th 2020
+  Last Edit:      17/07/2020 - July 17th 2020
 
 .LINK
   Repository:
@@ -35,7 +36,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.6.0
+Set-Variable version -option Constant -value 0.7.0
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -188,7 +189,6 @@ Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C Whi
 
 # Install spotify-downloader redirecting output to null
 Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
-# Invoke-Expression "pip install spotdl<2 2>&1 | Out-Null"
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
 
