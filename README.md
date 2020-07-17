@@ -6,13 +6,15 @@
 
 ## Usage
 
+❗️ **This tool works only with Python 3.6+**
+
 Run the setup script:
 
 ```powershell
 .\music.ps1
 ```
 
-For the most basic usage, downloading tracks is as easy as
+For the most basic usage, downloading tracks is as easy as:
 
 ```powershell
 spotdl --song https://open.spotify.com/track/2DGa7iaidT5s0qnINlwMjJ
