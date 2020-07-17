@@ -1,7 +1,7 @@
 {
   "name": "music",
   "version": "0.9.0",
-  "description": "Scripts to setup a disposable environment for downloading music from Spotify and YouTube",
+  "description": "Setup a disposable environment for downloading music from Spotify including metadata",
   "author": "PatEvs",
   "license": "MIT",
   "repository": {
