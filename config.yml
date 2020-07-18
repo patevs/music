@@ -1,0 +1,17 @@
+spotify-downloader:
+  dry_run: false
+  input_ext: automatic
+  log_level: INFO
+  manual: false
+  no_encode: false
+  no_metadata: false
+  no_spaces: false
+  output_ext: mp3
+  output_file: './dl/{artist} - {track-name}.{output-ext}'
+  overwrite: prompt
+  quality: best
+  search_format: '{artist} - {track-name} lyrics'
+  skip_file: null
+  trim_silence: false
+  write_successful_file: null
+  write_to: null
