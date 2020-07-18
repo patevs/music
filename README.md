@@ -27,6 +27,25 @@ spotdl -s <song-url>
 
 ---
 
+## Project Structure
+
+```md
+.
+├── docs
+├── scripts
+├── .editorconfig
+├── .gitignore
+├── .np-config.json
+├── config.yml
+├── LICENSE
+├── music.ps1
+├── package.json
+├── README.md
+└── runtime.txt
+```
+
+---
+
 ## Disclaimer
 
 Downloading copyright songs may be illegal in your country.
