@@ -14,11 +14,34 @@ Run the setup script:
 .\music.ps1
 ```
 
-For the most basic usage, downloading tracks is as easy as:
+For the most basic usage, downloading tracks and playlists is as easy as:
 
 ```powershell
-spotdl --song https://open.spotify.com/track/2DGa7iaidT5s0qnINlwMjJ
-spotdl --song "ncs - spectre"
+# Save Spotify Playlist:
+spotdl -p <playlist-url>
+# Download Spotify Playlist:
+spotdl --list <playlist-file>
+# Download Spotify Song:
+spotdl -s <song-url>
+```
+
+---
+
+## Project Structure
+
+```md
+.
+├── docs
+├── scripts
+├── .editorconfig
+├── .gitignore
+├── .np-config.json
+├── config.yml
+├── LICENSE
+├── music.ps1
+├── package.json
+├── README.md
+└── runtime.txt
 ```
 
 ---
