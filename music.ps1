@@ -18,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.7.0
+  Version:        0.7.1
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      17/07/2020 - July 17th 2020
+  Last Edit:      18/07/2020 - July 18th 2020
 
 .LINK
   Repository:
@@ -36,7 +36,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.7.0
+Set-Variable version -option Constant -value 0.7.1
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -192,12 +192,17 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " Done " -B Green -C Black
 
+# Install spotify-downloader redirecting output to null
+Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
+Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
+Write-Color " Done " -B Green -C Black
+
 Write-Host ""
 Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
 Write-Host "`n"
 Write-Color "Save Spotify Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
 Write-Color "Download Spotify Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
-Write-Color "Download Spotify Song:      spotdl -f './dl/{artist} - {track-name}.{output-ext}' -s <song-url>" -StartSpaces 2
+Write-Color "Download Spotify Song:      spotdl -s <song-url>" -StartSpaces 2
 # Write-Color "Download YouTube Song:      ytmdl [SONG_NAME]" -StartSpaces 2
 
 Write-Color ""
