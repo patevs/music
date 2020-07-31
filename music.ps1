@@ -137,7 +137,7 @@ if (ExistsCommand pip) {
   $pipVersion = Invoke-Expression "pip --version"
   $pipVersion = $pipVersion -replace "pip "
   $pipVersion = $pipVersion.Split(" ")[0]
-  Write-Color "|", " pip         ", "|", " $pipVersion      ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "|", " pip           ", "|", " $pipVersion      ", "|" -C White, Cyan, White, Green, White -StartSpace 4
   Write-Color "+-------------+-------------+" -StartSpace 4
 } else {
   Write-Color "pip", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
@@ -150,7 +150,7 @@ if (ExistsCommand ffmpeg) {
   $ffmpegVersion = Invoke-Expression "ffmpeg -version"
   $ffmpegVersion = $ffmpegVersion -replace "ffmpeg version "
   $ffmpegVersion = $ffmpegVersion.Split(" ")[0]
-  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion         ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "|", " ffmpeg    ", "|", " $ffmpegVersion         ", "|" -C White, Cyan, White, Green, White -StartSpace 4
   Write-Color "+-------------+-------------+" -StartSpace 4
 } else {
   Write-Color "ffmpeg", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
