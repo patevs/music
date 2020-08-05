@@ -18,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.7.2
+  Version:        0.7.3
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      31/07/2020 - July 31st 2020
+  Last Edit:      05/08/2020 - August 5th 2020
 
 .LINK
   Repository:
@@ -36,7 +36,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.7.2
+Set-Variable version -option Constant -value 0.7.3
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -97,8 +97,13 @@ if ($args.Count -gt 0) {
     # Check arguments
     switch ( $args[$i] )
     {
+
       "help" { PrintHelp }
+      "--help" { PrintHelp }
+      "-h" { PrintHelp }
       "version" { PrintVersion }
+      "--version" { PrintVersion }
+      "-v" { PrintVersion }
     }
   }
 }
@@ -123,6 +128,7 @@ if (ExistsCommand python) {
   $pythonVersion = Invoke-Expression "python --version"
   $pythonVersion = $pythonVersion -replace "Python "
   Write-Color " ", "   Install   ", " ", "   Version   " -B $background, Cyan, $background, Green -C Black, Black, Black, Black -StartSpace 4
+  # TODO: Ensure spacing is always correct
   Write-Color "+-------------+-------------+" -StartSpace 4
   Write-Color "|", " python      ", "|", " $pythonVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
   Write-Color "+-------------+-------------+" -StartSpace 4
@@ -137,7 +143,8 @@ if (ExistsCommand pip) {
   $pipVersion = Invoke-Expression "pip --version"
   $pipVersion = $pipVersion -replace "pip "
   $pipVersion = $pipVersion.Split(" ")[0]
-  Write-Color "|", " pip           ", "|", " $pipVersion      ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  # TODO: Ensure spacing is always correct
+  Write-Color "|", " pip         ", "|", " $pipVersion      ", "|" -C White, Cyan, White, Green, White -StartSpace 4
   Write-Color "+-------------+-------------+" -StartSpace 4
 } else {
   Write-Color "pip", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
@@ -150,7 +157,8 @@ if (ExistsCommand ffmpeg) {
   $ffmpegVersion = Invoke-Expression "ffmpeg -version"
   $ffmpegVersion = $ffmpegVersion -replace "ffmpeg version "
   $ffmpegVersion = $ffmpegVersion.Split(" ")[0]
-  Write-Color "|", " ffmpeg    ", "|", " $ffmpegVersion         ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  # TODO: Ensure spacing is always correct
+  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
   Write-Color "+-------------+-------------+" -StartSpace 4
 } else {
   Write-Color "ffmpeg", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
