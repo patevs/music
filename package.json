@@ -1,6 +1,6 @@
 {
   "name": "music",
-  "version": "0.10.4",
+  "version": "0.10.5",
   "description": "Setup a disposable environment for downloading music from Spotify including metadata",
   "author": "PatEvs",
   "license": "MIT",
