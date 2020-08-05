@@ -97,8 +97,13 @@ if ($args.Count -gt 0) {
     # Check arguments
     switch ( $args[$i] )
     {
+
       "help" { PrintHelp }
+      "--help" { PrintHelp }
+      "-h" { PrintHelp }
       "version" { PrintVersion }
+      "--version" { PrintVersion }
+      "-v" { PrintVersion }
     }
   }
 }
