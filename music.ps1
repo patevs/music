@@ -91,6 +91,9 @@ Function ExistsCommand ($cmdName) {
 PrintWelcome
 
 # Validate command line arguments
+# ! See:
+#   https://stackoverflow.com/q/2157554
+#   https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7
 if ($args.Count -gt 0) {
   # Loop over all arguments
   for ($i = 0; $i -lt $args.Count; $i++) {
