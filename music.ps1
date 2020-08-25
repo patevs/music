@@ -100,12 +100,11 @@ if ($args.Count -gt 0) {
     # Check arguments
     switch ( $args[$i] )
     {
-
       "help" { PrintHelp }
-      "--help" { PrintHelp }
+      "-help" { PrintHelp }
       "-h" { PrintHelp }
       "version" { PrintVersion }
-      "--version" { PrintVersion }
+      "-version" { PrintVersion }
       "-v" { PrintVersion }
     }
   }
@@ -197,11 +196,6 @@ Write-Color " Done " -B Green -C Black
 
 # Begin Install
 Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C White, Green
-
-# Install spotify-downloader redirecting output to null
-Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
-Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
-Write-Color " Done " -B Green -C Black
 
 # Install spotify-downloader redirecting output to null
 Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
