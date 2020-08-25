@@ -19,6 +19,9 @@
     "husky": "^4.2.5",
     "np": "^6.4.0"
   },
+  "commitlint": {
+    "extends": ["./node_modules/commitlint-config-gitmoji"]
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
