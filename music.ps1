@@ -176,7 +176,7 @@ Write-Color " `n All Requirements Satisfied! ", "Beginning Environment Setup... 
 try {
   Write-Color "Creating", " Virtual Environment...   " -C Green, White -StartSpaces 4 -NoNewLine
   Invoke-Expression "python -m venv $venvName 2>&1 | Out-Null"
-  Write-Color " Done " -B Green -C Black
+  Write-Color " DONE " -B Green -C Black
 } catch {
   Write-Color "Failed to Create Virtual Environment... " -C Cyan, White -StartSpace 2 -NoNewLine
   Write-Color " Exiting " -B Red
@@ -186,13 +186,13 @@ try {
 # Activate the virtual environment
 Write-Color "Activating", " Virtual Environment... " -C Green, White -StartSpaces 4 -NoNewLine
 Invoke-Expression "$venvName/Scripts/activate"
-Write-Color " Done " -B Green -C Black
+Write-Color " DONE " -B Green -C Black
 
 # Upgrade pip and setuptools redirecting output to null
 Write-Color "Upgrading ", "pip", " and ", "setuptools", "...   " -C Green, Cyan, White, Cyan, White -StartSpace 4 -NoNewLine
 Invoke-Expression "pip install --upgrade pip 2>&1 | Out-Null"
 Invoke-Expression "pip install --upgrade setuptools 2>&1 | Out-Null"
-Write-Color " Done " -B Green -C Black
+Write-Color " DONE " -B Green -C Black
 
 # Begin Install
 Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C White, Green
@@ -200,14 +200,14 @@ Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C Whi
 # Install spotify-downloader redirecting output to null
 Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
-Write-Color " Done " -B Green -C Black
+Write-Color " DONE " -B Green -C Black
 
 Write-Host ""
 Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
 Write-Host "`n"
-Write-Color "Save Spotify Playlist:      spotdl -p <playlist-url>" -StartSpaces 2
-Write-Color "Download Spotify Playlist:  spotdl --list <playlist-file>" -StartSpaces 2
-Write-Color "Download Spotify Song:      spotdl -s <song-url>" -StartSpaces 2
+Write-Color "Download song:      spotdl -s <song-url>" -StartSpaces 2
+Write-Color "Save playlist to file:      spotdl -p <playlist-url>" -StartSpaces 2
+Write-Color "Download playlist from file:  spotdl --list <playlist-file>" -StartSpaces 2
 # Write-Color "Download YouTube Song:      ytmdl [SONG_NAME]" -StartSpaces 2
 
 Write-Color ""
