@@ -35,6 +35,7 @@ spotdl --list <playlist-file>
 ```md
 .
 ├── docs                # Documentation
+│   └── links.md        # Links & resources
 ├── scripts             # Unused scripts
 ├── .editorconfig       # Editor configuration
 ├── .gitignore          # Git ignore rules
