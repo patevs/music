@@ -34,17 +34,16 @@ spotdl --list <playlist-file>
 
 ```md
 .
-├── docs
-├── scripts
-├── .editorconfig
-├── .gitignore
-├── .np-config.json
-├── config.yml
-├── LICENSE
-├── music.ps1
-├── package.json
-├── README.md
-└── runtime.txt
+├── docs                # Documentation
+├── scripts             # Unused scripts
+├── .editorconfig       # Editor configuration
+├── .gitignore          # Git ignore rules
+├── .np-config.json     # NPM publish (np) configuration
+├── config.yml          # spotdl configuration
+├── LICENSE             # Project LICENSE
+├── music.ps1           # Music environment setup script
+├── package.json        # NPM package configuration
+└── README.md           # Project README
 ```
 
 ---
