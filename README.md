@@ -4,7 +4,7 @@
 
 ---
 
-## Usage
+## Usage Instructions
 
 ❗️ **This tool works only with Python 3.6+**
 
@@ -17,12 +17,15 @@ Run the setup script:
 For the most basic usage, downloading tracks and playlists is as easy as:
 
 ```powershell
-# Save Spotify Playlist:
-spotdl -p <playlist-url>
-# Download Spotify Playlist:
-spotdl --list <playlist-file>
-# Download Spotify Song:
+# Download song:
 spotdl -s <song-url>
+```
+
+```powershell
+# Save playlist to file:
+spotdl -p <playlist-url>
+# Download songs from playlist file:
+spotdl --list <playlist-file>
 ```
 
 ---
