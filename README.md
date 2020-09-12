@@ -4,7 +4,7 @@
 
 ---
 
-## Usage
+## Usage Instructions
 
 ❗️ **This tool works only with Python 3.6+**
 
@@ -17,12 +17,15 @@ Run the setup script:
 For the most basic usage, downloading tracks and playlists is as easy as:
 
 ```powershell
-# Save Spotify Playlist:
-spotdl -p <playlist-url>
-# Download Spotify Playlist:
-spotdl --list <playlist-file>
-# Download Spotify Song:
+# Download song:
 spotdl -s <song-url>
+```
+
+```powershell
+# Save playlist to file:
+spotdl -p <playlist-url>
+# Download songs from playlist file:
+spotdl --list <playlist-file>
 ```
 
 ---
@@ -31,17 +34,17 @@ spotdl -s <song-url>
 
 ```md
 .
-├── docs
-├── scripts
-├── .editorconfig
-├── .gitignore
-├── .np-config.json
-├── config.yml
-├── LICENSE
-├── music.ps1
-├── package.json
-├── README.md
-└── runtime.txt
+├── docs                # Documentation
+│   └── links.md        # Links & resources
+├── scripts             # Unused scripts
+├── .editorconfig       # Editor configuration
+├── .gitignore          # Git ignore rules
+├── .np-config.json     # NPM publish (np) configuration
+├── config.yml          # spotdl configuration
+├── LICENSE             # Project LICENSE
+├── music.ps1           # Music environment setup script
+├── package.json        # NPM package configuration
+└── README.md           # Project README
 ```
 
 ---

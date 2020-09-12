@@ -16,9 +16,6 @@ node_modules/
 
 ### Python ###
 
-# pyenv
-.python-version
-
 # Virtual environment
 env/
 venv/
