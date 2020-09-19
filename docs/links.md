@@ -17,6 +17,7 @@
 
 [](.)
 
+* [`scdl`](https://github.com/flyingrub/scdl) Soundcloud Music Downloader.
 * [`ytmdl`](https://github.com/deepjyoti30/ytmdl) Get songs from youtube in mp3 format with artist name, album name etc from itunes, gaana etc.
   * *Note* - Requires `ffmpeg` to be installed & must be run using `bash`.
 * [`MusicRepair`](https://github.com/kalbhor/MusicRepair) Fixes music metadata and adds album art.
