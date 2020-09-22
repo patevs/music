@@ -1,4 +1,8 @@
-# Music Links and Resources
+# Music - Links and Resources
+
+---
+
+* [`[Version]::Parse` command](https://www.reddit.com/r/PowerShell/comments/ixw627/just_a_reminder_that_versionparse_exists/)
 
 ---
 
