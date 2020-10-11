@@ -35,4 +35,8 @@
 * [`spicetify-cli`](https://github.com/khanhas/spicetify-cli) Command line tool to customize Spotify client.
 * [`spicetify-themes`](https://github.com/morpheusthewhite/spicetify-themes) A community-driven collection of themes for Spicetify.
 
+[](.)
+
+* [`astrofox`](https://github.com/astrofox-io/astrofox) Astrofox is a motion graphics program that lets you create music visualizations and turn them into videos.
+
 ---
