@@ -18,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.7.5
+  Version:        0.8.0
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      12/09/2020 - September 9th 2020
+  Last Edit:      31/10/2020 - October 31st 2020
 
 .LINK
   Repository:
@@ -159,8 +159,10 @@ if (ExistsCommand ffmpeg) {
   $ffmpegVersion = Invoke-Expression "ffmpeg -version"
   $ffmpegVersion = $ffmpegVersion -replace "ffmpeg version "
   $ffmpegVersion = $ffmpegVersion.Split(" ")[0]
+  $ffmpegVersion = $ffmpegVersion.Split("-")[0] + "-" + $ffmpegVersion.Split("-")[1]
+  $ffmpegVersion = $ffmpegVersion.Replace("n","")
   # TODO: Ensure spacing is always correct
-  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion    ", "|" -C White, Cyan, White, Green, White -StartSpace 4
   Write-Color "+-------------+-------------+" -StartSpace 4
 } else {
   Write-Color "ffmpeg", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
@@ -205,12 +207,8 @@ Write-Color " DONE " -B Green -C Black
 Write-Host ""
 Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
 Write-Host "`n"
-Write-Color "Download a song:              spotdl -s <song-url>" -StartSpaces 2
-Write-Color "Save playlist to file:        spotdl -p <playlist-url>" -StartSpaces 2
-Write-Color "Download playlist from file:  spotdl --list <playlist-file>" -StartSpaces 2
-# Write-Color "Download YouTube Song:      ytmdl [SONG_NAME]" -StartSpaces 2
+Invoke-Expression "spotdl --help"
 
-Write-Color ""
 Write-Color " DONE " -B Green -C Black -NoNewLine
 Write-Color "`n"
 
