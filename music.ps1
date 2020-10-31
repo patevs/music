@@ -18,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.7.5
+  Version:        0.8.0
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      12/09/2020 - September 9th 2020
+  Last Edit:      31/10/2020 - October 31st 2020
 
 .LINK
   Repository:
