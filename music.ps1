@@ -207,12 +207,8 @@ Write-Color " DONE " -B Green -C Black
 Write-Host ""
 Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
 Write-Host "`n"
-Write-Color "Download a song:              spotdl -s <song-url>" -StartSpaces 2
-Write-Color "Save playlist to file:        spotdl -p <playlist-url>" -StartSpaces 2
-Write-Color "Download playlist from file:  spotdl --list <playlist-file>" -StartSpaces 2
-# Write-Color "Download YouTube Song:      ytmdl [SONG_NAME]" -StartSpaces 2
+Invoke-Expression "spotdl --help"
 
-Write-Color ""
 Write-Color " DONE " -B Green -C Black -NoNewLine
 Write-Color "`n"
 
