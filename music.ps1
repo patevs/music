@@ -18,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.8.0
+  Version:        0.8.1
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      31/10/2020 - October 31st 2020
+  Last Edit:      12/12/2020 - December 12th 2020
 
 .LINK
   Repository:
@@ -36,7 +36,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.7.5
+Set-Variable version -option Constant -value 0.8.1
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -204,9 +204,9 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " DONE " -B Green -C Black
 
-Write-Host ""
-Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
 Write-Host "`n"
+Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
+Write-Host ""
 Invoke-Expression "spotdl --help"
 
 Write-Color " DONE " -B Green -C Black -NoNewLine
