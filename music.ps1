@@ -31,6 +31,8 @@
 
 # ------------------------------------ [Initialisations] ------------------------------------ #
 
+# ...
+
 # -------------------------------------- [Declarations] ------------------------------------- #
 
 # https://stackoverflow.com/a/2608564
@@ -208,6 +210,8 @@ Write-Host "`n"
 Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
 Write-Host ""
 Invoke-Expression "spotdl --help"
+
+# TODO: Create and move into 'downloads' directory
 
 Write-Color " DONE " -B Green -C Black -NoNewLine
 Write-Color "`n"
