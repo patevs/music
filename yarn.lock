@@ -599,10 +599,10 @@ color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-commitlint-config-gitmoji@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/commitlint-config-gitmoji/-/commitlint-config-gitmoji-1.0.1.tgz#13dc3fe991dd1aec7ef36bdd88beb97874e00857"
-  integrity sha512-qzWMYSZN9KVjS8om+XwE8+cvr7+Nts8GKvPEi2RZZ+jTAQbzsLtdLIXq4KXqzE+PTVXgU1E6Diw0qQPvEwGrDA==
+commitlint-config-gitmoji@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/commitlint-config-gitmoji/-/commitlint-config-gitmoji-1.1.0.tgz#babb6808a3eb465a7dd1ecd7546611e5e48f0d68"
+  integrity sha512-x3uGGrYqMLfkhC9QsPweMeBCQOM30kK6lYMbBXHjWHZnq7N/C+D2emSFbuDwDM+lK0Px0Zca2W66VnQ3Xt5M4A==
 
 compare-func@^2.0.0:
   version "2.0.0"
