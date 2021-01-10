@@ -209,6 +209,8 @@ Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Blac
 Write-Host ""
 Invoke-Expression "spotdl --help"
 
+# TODO: Create and move into 'downloads' directory
+
 Write-Color " DONE " -B Green -C Black -NoNewLine
 Write-Color "`n"
 
