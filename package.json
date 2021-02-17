@@ -9,18 +9,23 @@
     "url": "git+https://github.com/patevs/music.git"
   },
   "scripts": {
+    "updates": "npx ncu",
     "release": "np"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
-    "commitlint-config-gitmoji": "^1.1.0",
+    "commitlint-config-gitmoji": "^2.2.1",
     "husky": "^4.3.7",
-    "np": "^7.2.0"
+    "np": "^7.4.0"
   },
   "commitlint": {
     "extends": [
-      "./node_modules/commitlint-config-gitmoji"
-    ]
+      "gitmoji"
+    ],
+    "rules": {
+      "subject-empty": [0, "never"],
+      "type-empty": [0, "never"]
+    }
   },
   "husky": {
     "hooks": {
