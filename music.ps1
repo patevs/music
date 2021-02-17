@@ -164,7 +164,7 @@ if (ExistsCommand ffmpeg) {
   $ffmpegVersion = $ffmpegVersion.Split("-")[0] + "-" + $ffmpegVersion.Split("-")[1]
   $ffmpegVersion = $ffmpegVersion.Replace("n","")
   # TODO: Ensure spacing is always correct
-  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion    ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion   ", "|" -C White, Cyan, White, Green, White -StartSpace 4
   Write-Color "+-------------+-------------+" -StartSpace 4
 } else {
   Write-Color "ffmpeg", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
@@ -208,12 +208,13 @@ Write-Color " DONE " -B Green -C Black
 
 Write-Host "`n"
 Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
-Write-Host ""
+Write-Host "`n"
 Invoke-Expression "spotdl --help"
 
 # TODO: Create and move into 'downloads' directory
 
+Write-Host ""
 Write-Color " DONE " -B Green -C Black -NoNewLine
-Write-Color "`n"
+Write-Host "`n"
 
 # ------------------------------------------ [END] ------------------------------------------ #
