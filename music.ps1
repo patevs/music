@@ -207,12 +207,14 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " DONE " -B Green -C Black
 
+# Create and move into 'downloads' directory
+New-Item -Path ".\downloads" -ItemType Directory -ErrorAction SilentlyContinue
+Set-Location -Path ".\downloads"
+
 Write-Host "`n"
 Write-Color "  ", " Usage Instructions " -B $background, Magenta -C Black, Black -NoNewline
 Write-Host "`n`n"
 Invoke-Expression "spotdl --help"
-
-# TODO: Create and move into 'downloads' directory
 
 Write-Host "`n"
 Write-Color " DONE " -B Green -C Black -NoNewLine
