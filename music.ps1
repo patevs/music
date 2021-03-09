@@ -53,9 +53,10 @@ Set-Variable venvName -option Constant -value "venv"
 
 # Print a Welcome Message
 Function PrintWelcome {
-  Write-Host ""
-  Write-Host " Music Environment Setup Script " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
   Write-Host "`n"
+  Write-Host "    " -NoNewLine
+  Write-Host " Music Environment Setup Script " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
+  Write-Host "`n`n"
 }
 
 # Print a Help Message
@@ -207,13 +208,13 @@ Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " DONE " -B Green -C Black
 
 Write-Host "`n"
-Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
-Write-Host "`n"
+Write-Color "  ", " Usage Instructions " -B $background, Magenta -C Black, Black -NoNewline
+Write-Host "`n`n"
 Invoke-Expression "spotdl --help"
 
 # TODO: Create and move into 'downloads' directory
 
-Write-Host ""
+Write-Host "`n"
 Write-Color " DONE " -B Green -C Black -NoNewLine
 Write-Host "`n"
 
