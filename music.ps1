@@ -18,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.8.2
+  Version:        0.9.0
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      17/02/2021 - Feburary 17th 2021
+  Last Edit:      09/03/2021 - 9th March 2021
 
 .LINK
   Repository:
@@ -38,7 +38,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.8.2
+Set-Variable version -option Constant -value 0.9.0
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -53,9 +53,10 @@ Set-Variable venvName -option Constant -value "venv"
 
 # Print a Welcome Message
 Function PrintWelcome {
-  Write-Host ""
-  Write-Host " Music Environment Setup Script " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
   Write-Host "`n"
+  Write-Host "    " -NoNewLine
+  Write-Host " Music Environment Setup Script " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
+  Write-Host "`n`n"
 }
 
 # Print a Help Message
@@ -206,14 +207,16 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " DONE " -B Green -C Black
 
+# Create and move into 'downloads' directory
+New-Item -Path ".\downloads" -ItemType Directory -ErrorAction SilentlyContinue
+Set-Location -Path ".\downloads"
+
 Write-Host "`n"
-Write-Host " Usage Instructions " -BackgroundColor Magenta -ForegroundColor Black -NoNewline
-Write-Host "`n"
+Write-Color "  ", " Usage Instructions " -B $background, Magenta -C Black, Black -NoNewline
+Write-Host "`n`n"
 Invoke-Expression "spotdl --help"
 
-# TODO: Create and move into 'downloads' directory
-
-Write-Host ""
+Write-Host "`n"
 Write-Color " DONE " -B Green -C Black -NoNewLine
 Write-Host "`n"
 
