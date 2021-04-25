@@ -132,11 +132,11 @@ Write-Color "Verifying ", "Installation Requirements... `n" -C Green, White -Sta
 if (ExistsCommand python) {
   $pythonVersion = Invoke-Expression "python --version"
   $pythonVersion = $pythonVersion -replace "Python "
-  Write-Color " ", "   Install   ", " ", "   Version   " -B $background, Cyan, $background, Green -C Black, Black, Black, Black -StartSpace 4
-  # TODO: Ensure spacing is always correct
-  Write-Color "+-------------+-------------+" -StartSpace 4
-  Write-Color "|", " python      ", "|", " $pythonVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
+  Write-Color " ", "  Install  ", " ", "  Version  " -B $background, Cyan, $background, Green -C Black, Black, Black, Black -StartSpace 4
+  Write-Color "+-----------+-----------+" -StartSpace 4
+  # Write-Color "|", " python      ", "|", " $pythonVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "|", " python    ", "|", " $($pythonVersion.PadRight(9)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "+-----------+-----------+" -StartSpace 4
 } else {
   Write-Color "python", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
   Write-Color " Exiting " -B Red
@@ -148,9 +148,9 @@ if (ExistsCommand pip) {
   $pipVersion = Invoke-Expression "pip --version"
   $pipVersion = $pipVersion -replace "pip "
   $pipVersion = $pipVersion.Split(" ")[0]
-  # TODO: Ensure spacing is always correct
-  Write-Color "|", " pip         ", "|", " $pipVersion      ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
+  # Write-Color "|", " pip         ", "|", " $pipVersion        ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "|", " pip       ", "|", " $($pipVersion.PadRight(9)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "+-----------+-----------+" -StartSpace 4
 } else {
   Write-Color "pip", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
   Write-Color " Exiting " -B Red
@@ -164,9 +164,9 @@ if (ExistsCommand ffmpeg) {
   $ffmpegVersion = $ffmpegVersion.Split(" ")[0]
   $ffmpegVersion = $ffmpegVersion.Split("-")[0] + "-" + $ffmpegVersion.Split("-")[1]
   $ffmpegVersion = $ffmpegVersion.Replace("n","")
-  # TODO: Ensure spacing is always correct
-  Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion   ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
+  # Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "|", " ffmpeg    ", "|", " $($ffmpegVersion.PadRight(9)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "+-----------+-----------+" -StartSpace 4
 } else {
   Write-Color "ffmpeg", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
   Write-Color " Exiting " -B Red
@@ -209,7 +209,7 @@ Write-Color " DONE " -B Green -C Black
 
 # Create and move into 'downloads' directory
 New-Item -Path ".\downloads" -ItemType Directory -ErrorAction SilentlyContinue
-Set-Location -Path ".\downloads"
+# Set-Location -Path ".\downloads"
 
 Write-Host "`n"
 Write-Color "  ", " Usage Instructions " -B $background, Magenta -C Black, Black -NoNewline
