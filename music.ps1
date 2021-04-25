@@ -132,11 +132,11 @@ Write-Color "Verifying ", "Installation Requirements... `n" -C Green, White -Sta
 if (ExistsCommand python) {
   $pythonVersion = Invoke-Expression "python --version"
   $pythonVersion = $pythonVersion -replace "Python "
-  Write-Color " ", "   Install   ", " ", "   Version   " -B $background, Cyan, $background, Green -C Black, Black, Black, Black -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
+  Write-Color " ", "  Install  ", " ", "  Version  " -B $background, Cyan, $background, Green -C Black, Black, Black, Black -StartSpace 4
+  Write-Color "+-----------+-----------+" -StartSpace 4
   # Write-Color "|", " python      ", "|", " $pythonVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "|", " python      ", "|", " $($pythonVersion.PadRight(11)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
+  Write-Color "|", " python    ", "|", " $($pythonVersion.PadRight(9)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "+-----------+-----------+" -StartSpace 4
 } else {
   Write-Color "python", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
   Write-Color " Exiting " -B Red
@@ -149,8 +149,8 @@ if (ExistsCommand pip) {
   $pipVersion = $pipVersion -replace "pip "
   $pipVersion = $pipVersion.Split(" ")[0]
   # Write-Color "|", " pip         ", "|", " $pipVersion        ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "|", " pip         ", "|", " $($pipVersion.PadRight(11)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
+  Write-Color "|", " pip       ", "|", " $($pipVersion.PadRight(9)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "+-----------+-----------+" -StartSpace 4
 } else {
   Write-Color "pip", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
   Write-Color " Exiting " -B Red
@@ -165,8 +165,8 @@ if (ExistsCommand ffmpeg) {
   $ffmpegVersion = $ffmpegVersion.Split("-")[0] + "-" + $ffmpegVersion.Split("-")[1]
   $ffmpegVersion = $ffmpegVersion.Replace("n","")
   # Write-Color "|", " ffmpeg      ", "|", " $ffmpegVersion       ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "|", " ffmpeg      ", "|", " $($ffmpegVersion.PadRight(11)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
-  Write-Color "+-------------+-------------+" -StartSpace 4
+  Write-Color "|", " ffmpeg    ", "|", " $($ffmpegVersion.PadRight(9)) ", "|" -C White, Cyan, White, Green, White -StartSpace 4
+  Write-Color "+-----------+-----------+" -StartSpace 4
 } else {
   Write-Color "ffmpeg", " installation could not be found. " -C Cyan, White -StartSpace 2 -NoNewLine
   Write-Color " Exiting " -B Red
