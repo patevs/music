@@ -6,6 +6,10 @@
 
 ---
 
+* [`fmdpy`](https://github.com/Liupold/fmdpy) Music downloader written in python.
+
+[](.)
+
 * [`spotify-downloader`](https://github.com/ritiek/spotify-downloader) Download Spotify playlists from YouTube with albumart and metadata.
   * *Note* - Requires `ffmpeg` to be installed.
 
