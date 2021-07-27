@@ -18,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.11.0
+  Version:        0.12.0
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      29/05/2021 - 29th May 2021
+  Last Edit:      27/07/2021 - 27th July 2021
 
 .LINK
   Repository:
@@ -38,7 +38,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.11.0
+Set-Variable version -option Constant -value 0.12.0
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -206,6 +206,12 @@ Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C Whi
 Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces 4 -NoNewLine
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " DONE " -B Green -C Black
+
+# Apply pytube Patches
+# See: https://github.com/spotDL/spotify-downloader/issues/1342#issuecomment-886141496
+Write-Color "Applying ", "pytube", " Patches... " -C Green, Cyan, White -StartSpaces 4 -NoNewLine
+Copy-Item "./patches/pytube/__main__.py" -Destination "./venv/Lib/site-packages/pytube/__main__.py" -Force
+Write-Color " DONE " -B Green -C Black -StartSpaces 6
 
 # Create 'downloads' directory
 New-Item -Path ".\downloads" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
