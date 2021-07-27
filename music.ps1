@@ -207,6 +207,12 @@ Write-Color "Installing", " Spotify Downloader... " -C Green, White -StartSpaces
 Invoke-Expression "pip install spotdl 2>&1 | Out-Null"
 Write-Color " DONE " -B Green -C Black
 
+# Apply pytube Patches
+# See: https://github.com/spotDL/spotify-downloader/issues/1342#issuecomment-886141496
+Write-Color "Applying ", "pytube", " Patches... " -C Green, Cyan, White -StartSpaces 4 -NoNewLine
+Copy-Item "./patches/pytube/__main__.py" -Destination "./venv/Lib/site-packages/pytube/__main__.py" -Force
+Write-Color " DONE " -B Green -C Black -StartSpaces 6
+
 # Create 'downloads' directory
 New-Item -Path ".\downloads" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
 # Set-Location -Path ".\downloads"
