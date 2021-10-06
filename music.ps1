@@ -49,6 +49,9 @@ Set-Variable background -option Constant -value (get-host).ui.rawui.BackgroundCo
 # Name of the virtual environment to be created
 Set-Variable venvName -option Constant -value "venv"
 
+# Enable verbose output
+# Set-Variable verbose -value false
+
 # --------------------------------------- [Functions] --------------------------------------- #
 
 # Print a Welcome Message
@@ -198,6 +201,11 @@ Write-Color "Upgrading ", "pip", " and ", "setuptools", "...   " -C Green, Cyan,
 Invoke-Expression "pip install --upgrade pip 2>&1 | Out-Null"
 Invoke-Expression "pip install --upgrade setuptools 2>&1 | Out-Null"
 Write-Color " DONE " -B Green -C Black
+
+# Install wheel
+Write-Color "Installing ", "wheel", "...   " -C Green, Cyan, White -StartSpace 4 -NoNewLine
+Invoke-Expression "pip install --upgrade wheel 2>&1 | Out-Null"
+Write-Color " DONE " -B Green -C Black -StartSpace 12
 
 # Begin Install
 Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C White, Green
