@@ -18,9 +18,9 @@
   .\music.ps1
 
 .NOTES
-  Version:        0.12.0
+  Version:        0.13.0
   Author:         PatEvs (https://github.com/patevs)
-  Last Edit:      27/07/2021 - 27th July 2021
+  Last Edit:      06/10/2021 - 6th October 2021
 
 .LINK
   Repository:
@@ -38,7 +38,7 @@
 # https://stackoverflow.com/a/2608564
 
 # Current version of the script
-Set-Variable version -option Constant -value 0.12.0
+Set-Variable version -option Constant -value 0.13.0
 
 # Current Foreground and Background Colors
 #   https://stackoverflow.com/a/26583010
@@ -48,6 +48,9 @@ Set-Variable background -option Constant -value (get-host).ui.rawui.BackgroundCo
 
 # Name of the virtual environment to be created
 Set-Variable venvName -option Constant -value "venv"
+
+# Enable verbose output
+# Set-Variable verbose -value false
 
 # --------------------------------------- [Functions] --------------------------------------- #
 
@@ -198,6 +201,11 @@ Write-Color "Upgrading ", "pip", " and ", "setuptools", "...   " -C Green, Cyan,
 Invoke-Expression "pip install --upgrade pip 2>&1 | Out-Null"
 Invoke-Expression "pip install --upgrade setuptools 2>&1 | Out-Null"
 Write-Color " DONE " -B Green -C Black
+
+# Install wheel
+Write-Color "Installing ", "wheel", "...   " -C Green, Cyan, White -StartSpace 4 -NoNewLine
+Invoke-Expression "pip install --upgrade wheel 2>&1 | Out-Null"
+Write-Color " DONE " -B Green -C Black -StartSpace 12
 
 # Begin Install
 Write-Color " `n Environment Setup Complete! ", "Beginning Install... `n" -C White, Green
