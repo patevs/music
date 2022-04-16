@@ -34,6 +34,7 @@ spotdl --list <playlist-file>
 
 ```md
 .
+├── .husky              # Husky configuration
 ├── docs                # Documentation
 │   └── links.md        # Links & resources
 ├── scripts             # Unused scripts
